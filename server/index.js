@@ -31,22 +31,52 @@ const User = mongoose.model("User", userSchema);
 
 //routes start
 app.post("/login", (req, res) => {
-    res.send("my login info");
+    const {email,password} = req.body
+    User.findOne({email: email}, (err, user) => {
+        if(user)
+        {
+            if(password === user.password)
+            {
+                res.send({messege:"Login Successful", user:user})
+            }
+            else
+            {
+                res.send({messege: "wrong password"})
+            }
+        }
+        else
+        {
+            res.send({messege : "user not registered"})
+        }
+    })
 })
 
 app.post("/signup", (req, res) => {
     const {firstName,lastName,email,password} = req.body
-    const user = new User({
-        firstName,lastName,email,password
-    })
-    user.save(err => {
-        if(err){
-            res.send(err)
+    //check if allready exist or not
+    User.findOne({email: email}, (err, user) => {
+        if(user)
+        {
+            res.send({messege: "User already exist!"})
         }
-        else{
-            res.send({messege : "successfully Registered"})
+        else
+        {
+            const user = new User({
+                firstName,lastName,email,password
+            })
+            user.save(err => {
+                if(err)
+                {             //for checking if any err at connection
+                    res.send(err)
+                }
+                else
+                {
+                    res.send({messege: "successfully Registered"})
+                }
+            })
         }
     })
+    
 })
 
 app.listen(9002, () => {

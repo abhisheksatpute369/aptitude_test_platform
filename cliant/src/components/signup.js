@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/signup.css"
 
@@ -12,6 +12,7 @@ const Signup = () => {
 		password: "",
 	});
     const [Error, setError] = useState("");
+    const navigate = useNavigate();
 
     const handleChange = (e) =>{
         const name = e.target.name;
@@ -27,7 +28,8 @@ const Signup = () => {
                 try {
                     const url = "http://localhost:9002/signup";
                     await axios.post(url, data)
-                    .then(res => console.log(res))
+                    .then(res => alert(res.data.messege))
+                    navigate("/login");
                 } catch (error) {
                     if (
                         error.response &&

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import Navbar from './navbar';
 import "../css/home.css"
-const Home = () => {
+const Home = ({user}) => {
 
     const [exam, setexam] = useState([]);
     const handleselect = (e) =>{
@@ -27,7 +27,7 @@ const Home = () => {
     }
     return (
         <div id="homecontainer">
-            <Navbar />
+            <Navbar user = {user}/>
             <div className='examselect'>
                 <p>Select your paper</p>
                 <select className='selectpaper' onChange={handleselect}>

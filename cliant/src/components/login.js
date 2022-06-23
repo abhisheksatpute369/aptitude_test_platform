@@ -1,18 +1,28 @@
 import React, { useState } from 'react';
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
 import "../css/login.css";
 
-const Login = () => {
+const Login = ({setloginuser}) => {
     const [data, setdata] = useState({email : "", password : ""})
+    const Navigate = useNavigate();
     const handleChange = (e) => {
         const name = e.target.name;
         const value = e.target.value;
         setdata({...data, [name]:value})
     }
 
-    const handleSubmit = () => {
-        
-
+    const handleSubmit = async(e) => {
+        e.preventDefault();
+        const url = "http://localhost:9002/login";
+        await axios.post(url, data)
+        .then(res => {
+            alert(res.data.messege)
+            setloginuser(res.data.user)
+            // history.push("/home")
+            // window.location = "/home"
+            Navigate("/home");
+        })
     }
 
     return (
@@ -39,11 +49,11 @@ const Login = () => {
 							className="inputs"
 						/><br></br>
 						
-						<Link to ="/home">
+						{/* <Link to ="/home"> */}
 							<button type="submit" className="submitbtn">
 								Sing In
 							</button><br></br>
-						</Link>
+						{/* </Link> */}
                         <p>New Here ?</p>
                         <Link to="/signup">
                             <button type="button" className="signupbtn">
