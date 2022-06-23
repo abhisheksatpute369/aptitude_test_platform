@@ -35,7 +35,18 @@ app.post("/login", (req, res) => {
 })
 
 app.post("/signup", (req, res) => {
-    res.send("my signup info");
+    const {firstName,lastName,email,password} = req.body
+    const user = new User({
+        firstName,lastName,email,password
+    })
+    user.save(err => {
+        if(err){
+            res.send(err)
+        }
+        else{
+            res.send({messege : "successfully Registered"})
+        }
+    })
 })
 
 app.listen(9002, () => {

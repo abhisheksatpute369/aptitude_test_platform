@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import axios from "axios";
 import "../css/signup.css"
 
 const Signup = () => {
@@ -10,6 +11,7 @@ const Signup = () => {
 		email: "",
 		password: "",
 	});
+    const [Error, setError] = useState("");
 
     const handleChange = (e) =>{
         const name = e.target.name;
@@ -17,8 +19,29 @@ const Signup = () => {
         setdata({...data,[name]:value })
     }
 
-    const handleSubmit = () => {
-
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        const {firstName,lastName,email,password} = data;
+            if(firstName && lastName && email && password)
+            {
+                try {
+                    const url = "http://localhost:9002/signup";
+                    await axios.post(url, data)
+                    .then(res => console.log(res))
+                } catch (error) {
+                    if (
+                        error.response &&
+                        error.response.status >= 400 &&
+                        error.response.status <= 500
+                    ) {
+                        setError(error.response.data.message);
+                    }
+                }
+            }
+            else{
+                alert("Check all input fields")
+            }
+        
     }
     return (
         <div>
