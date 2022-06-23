@@ -1,0 +1,44 @@
+.loginform{
+    width: 600px;
+    height: 400px;
+    margin: auto;
+    text-align: center;
+    margin-top: 150px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    box-sizing: border-box;
+}
+.loginform > h1{
+    padding-top: 30px;
+}
+.inputs{
+    width: 80%;
+    height: 10%;
+    margin-top: 5%;
+
+}
+.submitbtn{
+    padding: 10px 20px;
+    margin-top: 20px;
+    background-color: rgb(3, 194, 194);
+    border: none;
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+.submitbtn:hover{
+    background-color: rgb(3, 220, 220);
+    /* border: 1px solid gray; */
+
+}
+.signupbtn{
+    color: rgb(3, 194, 194);
+    border: none;
+    background-color: transparent;
+    font-size: 15px;
+    font-weight: 600;
+}
+.loginform > p{
+    display: inline;
+}
