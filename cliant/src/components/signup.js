@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom";
 import "../css/signup.css"
 
 const Signup = () => {
@@ -61,11 +62,11 @@ const Signup = () => {
 					Sing Up
 				</button><br></br>
                 <p>Have a account  ?</p>
-					{/* <Link to="/login"> */}
+					<Link to="/login">
 						<button type="button" className="signupbtn">
-							Sing in
+							Sing In
 						</button>
-					{/* </Link> */}
+					</Link>
 			</form>
         </div>
     );
