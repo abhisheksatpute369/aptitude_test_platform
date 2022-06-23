@@ -4,12 +4,14 @@ import "../css/login.css";
 
 const Login = () => {
     const [data, setdata] = useState({email : "", password : ""})
-    const handleChange = () => {
-
+    const handleChange = (e) => {
+        const name = e.target.name;
+        const value = e.target.value;
+        setdata({...data, [name]:value})
     }
 
     const handleSubmit = () => {
-
+        
 
     }
 
