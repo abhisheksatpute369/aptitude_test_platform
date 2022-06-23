@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import Navbar from './navbar';
 import "../css/home.css"
 const Home = () => {
 
@@ -25,6 +27,7 @@ const Home = () => {
     }
     return (
         <div id="homecontainer">
+            <Navbar />
             <div className='examselect'>
                 <p>Select your paper</p>
                 <select className='selectpaper' onChange={handleselect}>
@@ -44,7 +47,9 @@ const Home = () => {
                         })
                     }
                 </select>
-                <button className='starttest'>START TEST</button>
+                <Link to="/instruction">
+                    <button className='starttest'>START TEST</button>
+                </Link>
             </div>
             <h2 id="homemessege">Welcome Folk! please select your Exam and start MOCK TEST </h2>
             <div id="line"></div>
