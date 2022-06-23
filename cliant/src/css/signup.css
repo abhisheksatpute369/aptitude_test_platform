@@ -1,0 +1,17 @@
+.signupform{
+    width: 600px;
+    height: 500px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin: auto;
+    margin-top: 150px;
+    text-align: center;
+}
+.signupinputs{
+    width: 80%;
+    height: 8%;
+    margin-top: 5%;
+
+}
+.signupform > p{
+    display: inline;
+}
