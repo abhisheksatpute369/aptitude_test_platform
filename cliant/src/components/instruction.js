@@ -1,8 +1,11 @@
 import React from 'react';
 import Navbar from './navbar';
+import { useNavigate } from 'react-router-dom';
 import "../css/instruction.css"
 
 const Instruction = ({user}) => {
+
+    const Navigate = useNavigate();
 
     // function for cheking student accept all instructions 
     const starttest = () => {
@@ -12,7 +15,7 @@ const Instruction = ({user}) => {
             alert("accept all instructions");
         }
         else{
-            alert("start");
+            Navigate("/paper");
         }
     }
     return (
