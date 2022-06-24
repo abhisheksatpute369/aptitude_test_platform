@@ -70,6 +70,35 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
                     <button id="papersubmitbtn">Submit</button>
                 </div>
             </div>
+            <div id="papermiddle">
+                <div id="paperleft">
+                    <h3>Question: 1</h3>
+                    <div id="question">
+                        <div id="questionquestion">                        
+                            <p>what is boiling point of water what is boiling point of water what is boiling point of water what is boiling point of water what is boiling point of water?</p>
+                        </div>
+                        <div id="questionoptions">
+                            <div className='demooptions'>1 options options options</div>
+                            <div className='demooptions'>2 options options options</div>
+                            <div className='demooptions'>3 options options options</div>
+                            <div className='demooptions'>4 options options options</div>
+                        </div>
+                    </div>
+                    <h3>Choose option:</h3>
+                    <div id="choseoption">
+                        <div>1:<input type="radio" name='op' value="1"></input></div>
+                        <div>2:<input type="radio" name='op' value="2"></input></div>
+                        <div>3:<input type="radio" name='op' value="3"></input></div>
+                        <div>4:<input type="radio" name='op' value="4"></input></div>
+                    </div>
+                </div>
+                {/* <div id="paperright"></div> */}
+            </div>
+            <div id="lowerbuttons">
+                <button className='paperbutton' id="previous">PREVIOUS</button>
+                <button className='paperbutton' id="saveanswer">SAVE</button>
+                <button className='paperbutton' id="next">NEXT</button>
+            </div>
         </div>
     );
 };
