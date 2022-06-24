@@ -26,3 +26,9 @@
 #papersubmitbtn:hover{
     background-color: #08539e;
 }
+
+#papertimer{
+    color: #2c69a5;
+    font-size: 25px;
+    font-weight: 600;
+}
