@@ -101,6 +101,13 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
     })
     // timer end 
 
+    // for getting submit pop up after clicking submit button 
+    const submitpopup = () =>{
+        document.getElementById("submitmodel").style.visibility = "visible";
+    }
+    const canclepopup = () =>{
+        document.getElementById("submitmodel").style.visibility = "hidden";
+    }
     // for getting questions ffrom backend 
     // useEffect(()=>{
     //     getquestion();
@@ -116,7 +123,7 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
                 </div>
                 <div id="papertimer">{minuts} : {seconds}</div>
                 <div>
-                    <button id="papersubmitbtn">Submit</button>
+                    <button id="papersubmitbtn" onClick={submitpopup}>Submit</button>
                 </div>
             </div>
             <div id="papermiddle">
@@ -147,6 +154,15 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
                 <button className='paperbutton' id="previous" onClick={handleprevious}>PREVIOUS</button>
                 <button className='paperbutton' id="saveanswer" onClick={handlesave}>SAVE</button>
                 <button className='paperbutton' id="next" onClick={handlenext}>NEXT</button>
+            </div>
+            <div id="submitmodel">
+                <h2>Confirm !</h2>
+                <p>Do you want to submit</p>
+                <div id="twobuttons">
+                    <button id="sumbitwarning">YES</button>
+                    <button id="sumbitwarning" onClick={canclepopup}>NO</button>
+                </div>
+                
             </div>
         </div>
     );

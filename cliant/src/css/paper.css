@@ -127,3 +127,37 @@
 #next:hover{
     background-color: rgb(17, 249, 17);
 }
+#submitmodel{
+    width: 30%;
+    height: 250px;
+    border: 2px solid rgb(197, 0, 0);
+    position: fixed;
+    top: 150px;
+    left: 550px;
+    background-color: white;
+    text-align: center;
+    visibility: hidden;
+    border-radius: 10px;
+    box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
+}
+#submitmodel > h2{
+    margin-top: 8%;
+}
+#twobuttons{
+    width: 60%;
+    height: 15%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10%;
+
+}
+#sumbitwarning{
+    background-color: #026dd7;
+    width: 30%;
+    height: 100%;
+    border-radius: 5px;
+    border: none;
+    color: white;
+    font-size: 15px;
+}
