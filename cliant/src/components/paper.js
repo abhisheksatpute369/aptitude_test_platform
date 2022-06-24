@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import "../css/paper.css"
 import questions from "../question.json"
 
@@ -108,6 +109,12 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
     const canclepopup = () =>{
         document.getElementById("submitmodel").style.visibility = "hidden";
     }
+
+    // for display score card 
+    const showscorecard = () =>{
+        document.getElementById("scorecardcontainer").style.visibility = "visible";
+        document.getElementById("submitmodel").style.visibility = "hidden";
+    }
     // for getting questions ffrom backend 
     // useEffect(()=>{
     //     getquestion();
@@ -155,15 +162,52 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
                 <button className='paperbutton' id="saveanswer" onClick={handlesave}>SAVE</button>
                 <button className='paperbutton' id="next" onClick={handlenext}>NEXT</button>
             </div>
+
+            {/* for model pop of submit button  */}
             <div id="submitmodel">
                 <h2>Confirm !</h2>
                 <p>Do you want to submit</p>
                 <div id="twobuttons">
-                    <button id="sumbitwarning">YES</button>
+                    <button id="sumbitwarning" onClick={showscorecard}>YES</button>
                     <button id="sumbitwarning" onClick={canclepopup}>NO</button>
-                </div>
-                
+                </div>        
             </div>
+            {/* submit model end  */}
+
+            {/* student score card model start  */}
+            <div id="scorecardcontainer">
+                <h1>SCORE CARD</h1>
+                <div id="scorecardmodel">
+                    <div className='cards'>
+                        <p className='cardtitle'>Name</p>
+                        <p className='cardentry'><i>{user.firstName} {user.lastName}</i></p>
+                    </div>
+                    <div className='cards'>
+                        <p className='cardtitle'>Paper</p>
+                        <p className='cardentry'>{selectedpaper}</p>
+                    </div>
+                    <div className='cards'>
+                        <p className='cardtitle'>Subject</p>
+                        <p className='cardentry'>{finalexam}</p>
+                    </div>
+                    <div className='cards'>
+                        <p className='cardtitle'>Total Marks</p>
+                        <p className='cardentry'>{questions.length * 2}</p>
+                    </div>
+                    <div className='cards'>
+                        <p className='cardtitle'>Your Score</p>
+                        <p className='cardentry'>{score * 2}</p>
+                    </div>
+                    <div className='cards'>
+                        <p className='cardtitle'>Correct question</p>
+                        <p className='cardentry'>{score}</p>
+                    </div>
+                </div>
+                <Link to="/">
+                    <button id="logout">LOGOUT</button>
+                </Link>
+            </div>
+            
         </div>
     );
 };
