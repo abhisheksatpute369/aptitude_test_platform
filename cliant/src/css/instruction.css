@@ -1,0 +1,34 @@
+#instructionhead{
+    display: flex;
+    justify-content: space-around;
+}
+.instructioncontainer{
+    width:80%;
+    margin: auto;
+}
+#instructiontitle{
+    font-style: italic;
+    color: #183c61;
+}
+#instructionwarning{
+    color: rgb(147, 3, 3);
+    display: flex;
+    justify-content: space-around;
+    font-weight: 500;
+}
+#acceptcondition{
+    display: flex;
+}
+#acceptcondition > input{
+    margin-top: 20px;
+    margin-right: 10px;
+}
+#instructionstartbutton{
+    margin-left: 40%;
+    width: 20%;
+    height: 35px;
+    background-color: #183c61;
+    color: white;
+    margin-bottom: 50px;
+    border: none;
+}

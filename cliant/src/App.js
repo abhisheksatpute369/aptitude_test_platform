@@ -16,7 +16,7 @@ function App() {
         <Route path="/signup" exact element={<Signup />} />
         <Route path="/login" exact element={<Login setloginuser={setloginuser}/>} />
         { user && user._id && <Route path="/home" exact element={<Home user={user}/>} />}
-        <Route path="/instruction" exact element={<Instruction />}/>
+        <Route path="/instruction" exact element={<Instruction user={user}/>}/>
 		</Routes>
     </BrowserRouter>
     </>
