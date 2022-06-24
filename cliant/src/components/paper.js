@@ -1,10 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import "../css/paper.css"
+import questions from "../question.json"
 
 const Paper = ({user, selectedexam, selectedpaper}) => {
 
+    // const question = questions;
+    // console.log(question);
     const [minuts, setminuts] = useState(49);
     const [seconds, setseconds] = useState(60);
+    // const [questions, setquestions] = useState([]);
+    
 
     //for setting exam name on navbar of paper page
     var finalexam;
