@@ -4,11 +4,50 @@ import questions from "../question.json"
 
 const Paper = ({user, selectedexam, selectedpaper}) => {
 
-    // const question = questions;
-    // console.log(question);
     const [minuts, setminuts] = useState(49);
     const [seconds, setseconds] = useState(60);
-    // const [questions, setquestions] = useState([]);
+    const [currentquestion, setcurrentquestion] = useState(0);
+    const [correctanswer, setcorrectanswer] = useState(false);
+    const [score, setscore] = useState(0);
+   
+    
+    const handlenext = ()=>{
+        if(currentquestion < questions.length-1)
+        {
+            setcurrentquestion(currentquestion + 1);
+        }
+    }
+
+    // //for handle previous button click
+    const handleprevious = ()=>{
+        if(currentquestion > 0)
+        {
+            setcurrentquestion(currentquestion - 1);
+        }
+    }
+
+    //for handle option clicked
+    const handleoptionclick = (e) => {
+        const clickedoption = e.target.value;
+        if(questions[currentquestion].answer === clickedoption)
+        {
+            setcorrectanswer(true);
+        }
+        else{
+            setcorrectanswer(false);
+        }
+    }
+
+    //for handle save button
+    const handlesave = () =>{
+        if(correctanswer === true)
+        {
+            setscore(score + 1);
+            console.log(score);
+        }
+        alert("saved proceed next")
+    }
+    
     
 
     //for setting exam name on navbar of paper page
@@ -40,7 +79,7 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
     if(selectedexam === "9"){
         finalexam = "ADV Biology";
     }
-
+   
     // for setting time on navbar 
     var timer;
     useEffect(()=>{
@@ -62,6 +101,11 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
     })
     // timer end 
 
+    // for getting questions ffrom backend 
+    // useEffect(()=>{
+    //     getquestion();
+    // },[]);
+
     return (
         <div>
             <div id="paperupper">
@@ -77,32 +121,32 @@ const Paper = ({user, selectedexam, selectedpaper}) => {
             </div>
             <div id="papermiddle">
                 <div id="paperleft">
-                    <h3>Question: 1</h3>
+                    <h3>Question: {questions[currentquestion].number}</h3>
                     <div id="question">
                         <div id="questionquestion">                        
-                            <p>what is boiling point of water what is boiling point of water what is boiling point of water what is boiling point of water what is boiling point of water?</p>
+                            <p>{questions[currentquestion].question}</p>
                         </div>
                         <div id="questionoptions">
-                            <div className='demooptions'>1 options options options</div>
-                            <div className='demooptions'>2 options options options</div>
-                            <div className='demooptions'>3 options options options</div>
-                            <div className='demooptions'>4 options options options</div>
+                            <div className='demooptions'>1: {questions[currentquestion].optionA}</div>
+                            <div className='demooptions'>2: {questions[currentquestion].optionB}</div>
+                            <div className='demooptions'>3: {questions[currentquestion].optionC}</div>
+                            <div className='demooptions'>4: {questions[currentquestion].optionD}</div>
                         </div>
                     </div>
                     <h3>Choose option:</h3>
                     <div id="choseoption">
-                        <div>1:<input type="radio" name='op' value="1"></input></div>
-                        <div>2:<input type="radio" name='op' value="2"></input></div>
-                        <div>3:<input type="radio" name='op' value="3"></input></div>
-                        <div>4:<input type="radio" name='op' value="4"></input></div>
+                        <div>1:<input type="radio" name='op' value="1" onChange={handleoptionclick}></input></div>
+                        <div>2:<input type="radio" name='op' value="2" onChange={handleoptionclick}></input></div>
+                        <div>3:<input type="radio" name='op' value="3" onChange={handleoptionclick}></input></div>
+                        <div>4:<input type="radio" name='op' value="4" onChange={handleoptionclick}></input></div>
                     </div>
                 </div>
                 {/* <div id="paperright"></div> */}
             </div>
             <div id="lowerbuttons">
-                <button className='paperbutton' id="previous">PREVIOUS</button>
-                <button className='paperbutton' id="saveanswer">SAVE</button>
-                <button className='paperbutton' id="next">NEXT</button>
+                <button className='paperbutton' id="previous" onClick={handleprevious}>PREVIOUS</button>
+                <button className='paperbutton' id="saveanswer" onClick={handlesave}>SAVE</button>
+                <button className='paperbutton' id="next" onClick={handlenext}>NEXT</button>
             </div>
         </div>
     );

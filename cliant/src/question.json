@@ -1,83 +1,93 @@
 [
     {
+        "number" : "1",
         "question" : "When a bottle of perfume is opened in one corner of a room the smell spreads soon throughout the room. This is an example of",
         "optionA" : "surface tension",
         "optionB" : "capillarity",
         "optionC" : "viscosity",
         "optionD" : "diffusion",
-        "answer" : "diffusion"
+        "answer" : "4"
     },
     {
+        "number" : "2",
         "question" : "The working principle of a washing machine is?",
         "optionA" : "reverse osmosis",
         "optionB" : "diffusion",
         "optionC" : "centrifugation",
         "optionD" : "dialysis",
-        "answer" : "centrifugation"
+        "answer" : "3"
     },
     {
+        "number" : "3",
         "question" : "A solid ball of metal has a spherical cavity inside it. When the ball is heated the volume of the cavity will",
         "optionA" : "increase",
         "optionB" : "decrease",
         "optionC" : "remain unaffected",
         "optionD" : "its shape changed",
-        "answer" : "increase"
+        "answer" : "1"
     },
     {
+        "number" : "4",
         "question" : "Nuclear sizes are expressed in a unit named",
         "optionA" : "Fermi",
         "optionB" : "Angstrom",
         "optionC" : "Newton",
         "optionD" : "Tesla",
-        "answer" : "Fermi"
+        "answer" : "1"
     },
     {
+        "number" : "5",
         "question" : "The speed of light will be minimum while passing through",
         "optionA" : "water",
         "optionB" : "vaccum",
         "optionC" : "air",
         "optionD" : "glass",
-        "answer" : "glass"
+        "answer" : "4"
     },
     {
+        "number" : "6",
         "question" : "Which of the following is not a vector quantity?",
         "optionA" : "speed",
         "optionB" : "velocity",
         "optionC" : "torque",
         "optionD" : "displacement",
-        "answer" : "speed"
+        "answer" : "1"
     },
     {
+        "number" : "7",
         "question" : "The purpose of choke in tube light is",
         "optionA" : "Induce high voltage",
         "optionB" : "Induce low resistance",
         "optionC" : "Induce high resistance",
         "optionD" : "Induce low voltage",
-        "answer" : "Induce high voltage"
+        "answer" : "1"
     },
     {
+        "number" : "8",
         "question" : "Two electric bulbs marked 25W – 220V and 100W – 220V are connected in series to a 440Vsupply. Which of the bulbs will fuse?",
         "optionA" : "25 W",
         "optionB" : "Both",
         "optionC" : "100 W",
         "optionD" : "Neither",
-        "answer" : "25 W"
+        "answer" : "1"
     },
     {
+        "number" : "9",
         "question" : "The thrust exerted by a body on a surface = ?",
         "optionA" : "volume of the body",
         "optionB" : "density of the body",
         "optionC" : "weight of the body",
         "optionD" : "mass of the body",
-        "answer" : "weight of the body"
+        "answer" : "3"
     },
     {
+        "number" : "10",
         "question" : "Which of the following is NOT an equation of motion?",
         "optionA" : "s = ut + 12at2",
         "optionB" : "v = u + a",
         "optionC" : "s = ut + 12at3",
         "optionD" : "v2 = u2 + 2as",
-        "answer" : "s = ut + 12at3"
+        "answer" : "3"
     }
    
 ]
