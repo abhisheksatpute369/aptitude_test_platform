@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import "../css/login.css";
+import Navbarlogin from './navbarlogin';
+import Footer from './footer';
 
 const Login = ({setloginuser}) => {
     const [data, setdata] = useState({email : "", password : ""})
@@ -27,6 +29,7 @@ const Login = ({setloginuser}) => {
 
     return (
         <div>
+            <Navbarlogin />
             <div id="container">
             <form className="loginform" onSubmit={handleSubmit}>
 						<h1>Login to Your Account</h1>
@@ -62,6 +65,7 @@ const Login = ({setloginuser}) => {
                         </Link>
 					</form>
             </div>
+            <Footer />
         </div>
     );
 };

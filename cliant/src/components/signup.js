@@ -1,7 +1,9 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
-import "../css/signup.css"
+import "../css/signup.css";
+import Navbarlogin from './navbarlogin';
+import Footer from './footer';
 
 const Signup = () => {
 
@@ -47,6 +49,7 @@ const Signup = () => {
     }
     return (
         <div>
+            <Navbarlogin />
             <form className="signupform" onSubmit={handleSubmit}>
 				<h1>Create Account</h1>
 				<input
@@ -95,6 +98,7 @@ const Signup = () => {
 						</button>
 					</Link>
 			</form>
+            <Footer />
         </div>
     );
 };

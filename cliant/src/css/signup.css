@@ -3,7 +3,8 @@
     height: 500px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
     margin: auto;
-    margin-top: 150px;
+    margin-top: 100px;
+    margin-bottom: 50px;
     text-align: center;
 }
 .signupinputs{
